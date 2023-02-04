@@ -1,5 +1,6 @@
 package com.devmountain.noteApp.entities;
 
+import com.devmountain.noteApp.dtos.NoteDto;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -44,14 +45,23 @@ public class Note {
         this.body = body;
     }
 
-    //This Constructor is commented out since the '@NoArgsConstructor' Annotation is implemented on line 13
+    //This Constructor is commented out since the '@NoArgsConstructor' Annotation is implemented on line 14
     //Generate a Constructor w/ No fields (No Arguments)
             //    public Note() {
             //
             //    }
-//Generate a Constructor w/ All fields (ALL Arguments): 'id' and 'body'
-    public Note(Long id, String body) {
-        this.id = id;
-        this.body = body;
+
+    //This Constructor is commented out since the '@AllArgsConstructor' Annotation is implemented on line 13
+            //Generate a Constructor w/ All fields (ALL Arguments): 'id' and 'body'
+//    public Note(Long id, String body) {
+//        this.id = id;
+//        this.body = body;
+//    }
+
+    //Create a Constructor that takes in the referenced DTO (NoteDto) classes as an argument
+    public Note(NoteDto noteDto){
+        if(noteDto.getBody() != null){
+            this.body = noteDto.getBody();
+        }
     }
 }

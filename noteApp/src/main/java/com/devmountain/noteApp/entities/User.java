@@ -1,5 +1,6 @@
 package com.devmountain.noteApp.entities;
 
+import com.devmountain.noteApp.dtos.UserDto;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
@@ -54,16 +55,15 @@ public class User {
     }
 
 
-    //Generate a Constructor with no fields (No Arguments) -'Select None' (on the Generate menu popup)
-    public User() {
-
+    //Create a Constructor that takes in the referenced DTO classes as an argument
+    public User(UserDto userDto){
+        if(userDto.getUsername() != null){
+            this.username = userDto.getUsername();
+        }
+        if(userDto.getPassword() != null){
+            this.password = userDto.getPassword();
+        }
     }
 
-    //Generate a Constructor for the following fields (w/Arguments) previously created : 'id, username, password'
-    public User(Long id, String username, String password) {
-        this.id = id;
-        this.username = username;
-        this.password = password;
-    }
 }
 
