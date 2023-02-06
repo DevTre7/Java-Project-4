@@ -45,7 +45,16 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- Project Part 3- Step 2- Creating the Service Layer: -->
+			<!--Insert the following dependency in this 'pom.xml' file then refresh build by clicking on the maven logo w/ the refresh icon-->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+			<version>5.5.1</version>
+		</dependency>
+
 	</dependencies>
+
 
 	<build>
 		<plugins>
