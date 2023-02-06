@@ -1,7 +1,7 @@
 
 //Cookie
 const cookieArr = document.cookie.split("=")
-const userId = cookieArr[1];
+const userId = cookieArr[i];
 
 //DOM Elements
 const submitForm = document.getElementById("note-form")
